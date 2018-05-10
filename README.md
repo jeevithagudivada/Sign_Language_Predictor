@@ -6,7 +6,7 @@ Operating System Required is Ubuntu 16.04 or newer with the following dependenci
   
    	-- Django 2.0.3
   
- 	  -- Tensorflow 1.6.0
+ 	-- Tensorflow 1.6.0
 
 To run the application change to project directory and type the command 'python3 manage.py runserver'
 
