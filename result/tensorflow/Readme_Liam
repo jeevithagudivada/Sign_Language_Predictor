@@ -1,0 +1,118 @@
+Making an image classifier using tensor flow for poets
+
+Classifier used: Neural Network.
+Tensorflow for Poets sets up and trains the neural network behind the scenes.
+
+
+Ubuntu 16.04
+
+1.  Download the Anaconda
+	 - It is a python distribution, with installation and package management tools.
+	 - It provides large selection of packages and commercial support. It is an environment 	   manager, which provides the facility to create different python environments, each with 		   their own settings.
+	 - Anaconda is a set of python libraries which has the standard python programming 		   language libraries as well as numerous third party scipy libraries like numpy, pandas, 		   scikit-learn.
+	Conda
+	 - “Conda”, the Anaconda’s own package manager, is used for updating anaconda and its      		    packages.
+	 - Conda is a cross platform package and environment manager. It provides installing, 		   executing and updating different packages along with their dependencies.
+
+Command : bash Anaconda-latest-Linux-x86_64.sh
+
+Useful link : https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
+
+2. Check if spyder is installed. If not, install it.
+	- spyder is an open source cross-platform integrated 		  development environment (IDE) for scientific programming in 		  the Python language. 
+	- Spyder integrates NumPy, SciPy, Matplotlib and IPython, as 		  well as other open source software.
+
+Command: spyder
+
+3. Command : pip list 
+
+	lists all the installed libraries in the system
+
+4. Check if conda is present :
+
+Command: conda --version
+
+5. Check if python is present. if not, install it
+
+Command : python --version
+
+6. Install Tensorflow 
+
+Useful Link: https://www.tensorflow.org/install/install_linux
+
+As told in the article ;
+
+In Anaconda, you may use conda to create a virtual environment. However, within Anaconda, we recommend installing TensorFlow with the pip install command, not with the conda install command.
+
+a) Create a conda environment named tensorflow to run a version of Python by invoking the following command:
+
+Command: conda create -n tensorflow pip python=2.7
+
+b) Activate the conda environment by issuing the following command:
+
+Command: source activate tensorflow
+ (tensorflow)$  # Your prompt should change 
+
+c) Issue a command of the following format to install TensorFlow inside your conda environment:
+
+Command: pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp27-none-linux_x86_64.whl
+
+7. Run python
+
+Command: python
+
+#### Very Useful Link ***
+
+https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/?utm_campaign=chrome_series_machinelearning_063016&utm_source=gdev&utm_medium=yt-desc#0
+
+Pay special attention to - (4) Re-training the network
+
+####
+
+8. git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
+
+9. ls
+
+LIAM: CHANGE DIRECTORY TO tensorflow
+
+10. cd tensorflow
+
+11. a folder will be formed named tf_files. Within this file add the file named ASL-Alphabets
+
+12. ls tf_files/media
+	It should display - 1, 2, .. 10, A, B.. Y
+
+13. IMAGE_SIZE=224
+
+14. ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
+
+15. tensorboard --logdir tf_files/training_summaries &
+
+16. python3 -m scripts.retrain -h
+
+17. python3 -m scripts.retrain   
+    --bottleneck_dir=tf_files/bottlenecks   
+    --how_many_training_steps=500   
+    --model_dir=tf_files/models/   
+    --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" 
+    --output_graph=tf_files/retrained_graph.pb   
+    --output_labels=tf_files/retrained_labels.txt   
+    --architecture="${ARCHITECTURE}"   
+    --image_dir=tf_files/media
+
+python3 -m scripts.retrain --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 --model_dir=tf_files/models/ --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --architecture="${ARCHITECTURE}" --image_dir=tf_files/media
+
+18. python3 -m  scripts.label_image -h
+
+
+TESTING
+
+19. python3 -m scripts.label_image --graph=tf_files/retrained_graph.pb --image=yyy/input.jpg
+
+
+TERMINATE PORT 8000:
+
+sudo fuser -k 8000/tcp
+ 
+
+

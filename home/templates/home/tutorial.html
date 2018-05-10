@@ -1,0 +1,137 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Predictor</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  
+  <link rel="stylesheet" href="{% static 'css/tutorial.css' %}">
+  
+</head>
+
+<body>
+
+  <main ng-app="app" ng-controller="mainCtrl">
+  <section class="content">
+  <article ng-class="{'active': section == 1}" ng-click="changeSec(1)">
+      <header class="connect">
+        <div id="icon" class="fa fa-universal-access fa-4x" aria-hidden="true"></div>
+        <h3>Universal Care</h3>
+      </header>
+      <p></p>
+    </article>
+  <nav>
+    <ul>
+      <li>
+        <a href="../../index">Home</a>
+      </li>
+      <li>
+        <a href="../../about">About</a>
+      </li>
+      <li>
+        <a href="../../tutorial">Tutorials</a>
+      </li>
+      <li>
+        <a href="../../contact">Contact</a>
+      </li>
+    </ul>
+</nav>
+<br>
+<br>
+    <h1>
+  <div class="animated fadeInLeft">Predictor</div><div class="animated fadeInRight">Sign Language</div>
+</h1>
+<br>
+<br>
+
+</section>
+
+<br>
+<br>
+
+  <div class="left-wrap">
+
+  <h1 class="medium">Tutorials</h1>
+      <table border="0">
+        <tr>
+          <td class="running-head">This page explains what the application does!</td>
+          
+        </tr>
+        <tr>
+          <td class="running-head">Brought to you by your friends at California State University, Fullerton</td>          
+        </tr>
+
+        <tr>
+          <td class="intro">There are many people who do not know American Sign Language, our goal is to help those understand what people are saying when they sign. Our web application takes still images/captures video of signs of the American sign language alphabet and returns the prediction along with accuracy of the results</td>  
+        </tr>
+        
+        <tr>
+          <td class="headline">Upload Sign</td>
+        </tr>
+
+        <tr>
+            <td class="note">Using the Upload Sign option on the webpage you can select the sign image you want to predict from the media folder where images are organized according to alphabets and numbers. After successful upload of the image the prediction is diaplayed on the result page with accuracy!</td>
+        </tr>
+
+        <tr>
+            <td class="headline">Video</td>
+        </tr>
+
+        <tr>
+            <td class="note">Using the "Video" option on the webpage you can enact the sign using camera interaction provided. The camera takes in live feed of the sign enacted by the signer and the prediction is displayed on the same page with accuracy of the results!</td>
+        </tr>
+
+        <tr>
+            <td class="headline">Data Training</td>
+        </tr>
+
+        <tr>
+          <td class="note">The appliaction also provides "Train New Data" option where the user can upload new signs to our dataset and train the prediction model to obtain better prediction results and accuracy.</td>
+        </tr>
+        
+      </table>
+</div>
+
+
+
+
+
+<div class="right-wrap">
+  
+  <h1 class="medium">Results</h1>
+  <p class="thin"> This application predicts ASL and provides output in the form of text to help both signers and non-signers!</p>
+  
+  
+  
+  <h1 class="medium tran">No. 1</h1>
+  <p class="bold">Upload Sign</p>
+ <p class="thin">Sign Prediction using still image from media</p> 
+      <div class="img"><img src="{% static 'images/h.jpg' %}" alt="Smiley face" height="300"></div>
+  
+  <h1 class="medium tran">No. 2</h1>
+  <p class="bold">Video</p>
+  <p  class="thin">Sign Prediction with camera interaction</p>
+    <div class="img"><img src="{% static 'images/b.jpg' %}" alt="Smiley face" height="300"></div>
+  
+  
+</div>
+  
+</main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+  
+
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+
+
+</body>
+
+</html>
+

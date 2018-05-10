@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/result_decor.css' %}">	
+    <link rel="stylesheet" href="{% static 'css/result2.css' %}">	
+</head>
+<body>
+<main ng-app="app" ng-controller="mainCtrl">
+    <section class="content-top">
+    <article ng-class="{'active': section == 1}" ng-click="changeSec(1)">
+        <header class="connect">
+          <div id="icon" class="fa fa-universal-access fa-4x" aria-hidden="true"></div>
+          <h3>Universal Care</h3>
+        </header>
+       
+      </article>
+    <nav>
+      <ul>
+        <li>
+          <a href="../../index">Home</a>
+        </li>
+        <li>
+          <a href="../../about">About</a>
+        </li>
+        <li>
+          <a href="../../tutorial">Tutorials</a>
+        </li>
+        <li>
+          <a href="../../contact">Contact</a>
+        </li>
+        <li>
+            <a href="../../upload/form">Back</a>
+        </li>
+      </ul>
+  </nav>
+ 
+  
+</section>
+</main>
+  
+ 
+<h1 class="medium">Prediction Result</h1>
+  <div class="content">
+      
+    <table>
+    
+      {%for item in result%}
+      <tr><td>&nbsp;&nbsp;&nbsp;{{item}}</td></tr>
+      {% endfor %}
+    
+  </table>
+  </div>
+
+
+
+
+<div class="letter">
+    <p class="shadow textView animated bounce">{{result.0.0}}</p>
+  </div>
+
+  <div class="sign">
+    <img src="{{MEDIA_URL}}/media/input/input.jpg" />
+  </div>
+
+    
+
+  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>  
+
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body >
+</html >

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+
+body{
+    padding-left: 50px;
+}
+
+
+h1{
+  font-family: 'Old Standard TT', serif;
+  color:whitesmoke;
+  text-transform: uppercase;
+  font-size: 32px;
+  
+}
+
+#folder{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 16px;
+	
+    text-shadow: 0px 0px 25px #238014;
+	margin-right: 10px;
+}
+
+#div-submit{
+    padding: 15px 0px 0px 10px;
+    padding-left: 220px;
+	
+}
+
+
+.home{
+    padding-right:20px;
+    float: right;
+    padding-top:10px;
+      font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 12px;
+      font-weight:bold;	
+  }
+  
+  .home:hover {
+      color: #4CAF50;
+      text-shadow:  0px 4px 8px rgba(0,0,0.4,0.8),
+                          0px 8px 8px rgba(0,0.1,5,0.2),
+                  0px 18px 18px rgba(0,0.6,0,0.5);
+      font-size: 13px;
+  }
+  
+  
+
+input[type="submit"] {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    -webkit-transition-duration: 0.5s; /* Safari */
+    transition-duration: 0.5s;
+	border: 1px solid #FCA205;
+    border-radius: 16px;
+	background-color: #FCA205; 
+	width: 160px;
+    height: 28px;
+   
+	
+}
+
+input[type="submit"]:hover {
+    background-color: #4CAF50; 
+    color: white;
+    
+}
+
+
+label{             
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 1.0em;
+}
+
+#preview img{
+	height:280px;	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+}
+
+#preview{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 11px;
+	color: #05575b;   
+    padding: 15px 0px 0px 10px;
+}
+
+#preview .img_title{
+		padding-left: 210px;
+}
+
+.myFile {
+  position: relative;
+  overflow: hidden;
+  display: inline;  
+  clear: left;
+}
+
+.myFile input[type="file"] {
+  display: block;  
+  opacity: 0;
+  font-size: 1px;
+  filter: alpha(opacity=0);
+  cursor: pointer; 
+  border-radius: 10px;
+}
+
+.myFile:hover {
+  
+  color: #4CAF50;
+  text-shadow: 0px 4px 8px rgba(0,0,0,0.8),
+             0px 8px 15px rgba(0,0,5,0.2),
+             0px 18px 25px rgba(0,4,0,0.5);	
+}
+

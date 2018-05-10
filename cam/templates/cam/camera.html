@@ -1,0 +1,247 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/cam_decor.css' %}">
+</head>
+
+<body>
+
+    <a href="../../index" class="home">Home Page</a>
+    <h1>CAMERA INTERACTION</h1>
+    <div class="content">
+        <form method="post" action="cam/autoCapture/" enctype="multipart/form-data"> {% csrf_token %}
+            <video id="video" width="640" height="480" autoplay></video>
+            <canvas width='640' height='480' style="border:1px solid #d3d3d3;" id="canvas_id"></canvas>
+            <input type="text" id="imageDataField" name="imageDataField" value="abc" style="display:none" />
+            <br>
+            <img src="" id="picture" name="picture" style="display:none;" />
+            <br />
+            <!--
+            <div>
+                <fieldset id="group_duration_radios">
+                    <input type="radio" id="radio_stop" name="duration" value='none' checked/>
+                    <label for="radio_stop">
+                        <span></span>Stop</label>
+
+                    <input type="radio" id="radio_3seconds" name="duration" value='three' />
+                    <label for="radio_3seconds">
+                        <span></span>3 Seconds</label>
+
+                    <input type="radio" id="radio_5seconds" name="duration" value='five' />
+                    <label for="radio_5seconds">
+                        <span></span>5 Seconds</label>
+
+                    <input type="radio" id="radio_8seconds" name="duration" value='eight' />
+                    <label for="radio_8seconds">
+                        <span></span>8 Seconds</label>
+                </fieldset>
+            </div>
+        -->
+            <p></p>
+            <div id="prediction_result">
+                <div id="article_probability"></div>
+                <div class="sign" id="article_letter"></div>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        var video = document.getElementById('video');
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                video.src = window.URL.createObjectURL(stream);
+                video.play();
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        /*
+
+        var duration = 5000;
+
+        function Timer(fn, t) {
+            var timerObj = setInterval(fn, t);
+
+            this.stop = function () {
+                if (timerObj) {
+                    clearInterval(timerObj);
+                    timerObj = null;
+                }
+                return this;
+            }
+
+            // start timer using current settings (if it's not already running)
+            this.start = function () {
+                if (!timerObj) {
+                    this.stop();
+                    timerObj = setInterval(fn, t);
+                }
+                return this;
+            }
+
+            // start with new interval, stop current interval
+            this.reset = function (newT) {
+                t = newT;
+                return this.stop().start();
+            }
+        }
+
+        $(document).ready(function () {
+            var timer = new Timer(function () {
+                takePhoto();
+                $.ajax({
+                    url: 'cam/autoCapture',                       
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data);
+                        $("#article_letter").html('<p class="shadow textView animated bounce">' + data + '</p>');
+                    }
+                });
+                Alert('hello');              
+
+            }, 5000);
+            timer.stop();
+            $('input[type=radio][name=duration]').change(function () {
+
+                clearInterval(takePhoto);
+                if (this.value == 'none') {
+                    timer.stop();
+                }
+                else if (this.value == 'three') {
+                    duration = 1500;
+                    timer.reset(duration);
+                    timer.start();
+                }
+                else if (this.value == 'five') {
+                    duration = 5000;
+                    timer.reset(duration);
+                    timer.start();
+                }
+                else {
+                    duration = 8000;
+                    timer.reset(duration);
+                    timer.start();
+                }
+            });
+        });
+*/
+
+        var localMediaStream = null;
+        var video = document.querySelector('video');
+        var canvas = document.querySelector('canvas');
+
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+        window.URL = window.URL || window.webkitURL;
+
+        function takePhoto() {
+            startCapture();
+            var ctx = canvas.getContext('2d');
+            var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            var data = imgData.data;
+            for (var i = 0; i < data.length; i += 4) {
+                if (data[i + 3] < 255) {
+                    data[i] = 255 - data[i];
+                    data[i + 1] = 255 - data[i + 1];
+                    data[i + 2] = 255 - data[i + 2];
+                    data[i + 3] = 255 - data[i + 3];
+                }
+            }
+            ctx.putImageData(imgData, 0, 0);
+            ctx.drawImage(video, 0, 0, 640, 480);
+
+            //document.querySelector('img').src = canvas.toDataURL('image/jpeg');
+
+            var theData = canvas.toDataURL('image/jpeg');
+            document.getElementById('imageDataField').value = theData;
+            // document.getElementById('picture').src = theData;
+            //document.document.querySelector('form').submit();
+
+            stopCapture();
+
+            // var dataURL = canvas.toDataURL("image/jpeg");
+            // document.getElementById('imageDataField').value=dataURL;
+            //document.querySelector('form').submit();
+
+
+        }
+
+
+
+        function startCapture() {
+            navigator.getUserMedia({ video: true }, function (stream) {
+                video.src = window.URL.createObjectURL(stream);
+                localMediaStream = stream;
+            }, function (e) {
+                console.log(e);
+            });
+        }
+
+        function stopCapture() {
+            video.pause();
+            localMediaStream.stop();
+        }
+
+
+
+    </script> {% block javascript %} {% csrf_token %}
+    <script>
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=");
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1;
+                    c_end = document.cookie.indexOf(";", c_start);
+                    if (c_end == -1) c_end = document.cookie.length;
+                    return unescape(document.cookie.substring(c_start, c_end));
+                }
+            }
+            return "";
+        }
+
+        setInterval(function () {
+            var theData = canvas.toDataURL('image/jpeg');
+
+            $.ajax({
+                headers: { "X-CSRFToken": getCookie("csrftoken") },
+                type: "POST",
+                url: '/cam/autoCapture/',
+                dataType: 'json',
+                data: { "imgBase64": theData },
+                success: function (data) {
+                    //alert(data);
+                    //$("#article_probability").html('<p class="probability">' + data + '</p>');
+                    //$("#article_letter").html('<p class="shadow textView animated bounce">' + data + '</p>');
+                    //article_probability
+                    $("#article_letter").html('<p class="shadow textView animated bounce">' + data[0].split(':')[0] + '</p>');
+                    var htmlContent = "<ul>";
+                    $.each(data, function (key, value) {
+                        htmlContent+="<li>";
+                        htmlContent += value;
+                        htmlContent+="</li>";                       
+                        
+                    });
+                    htmlContent += "</ul>";
+
+                    $("#article_probability").html(htmlContent);
+
+
+                }
+            });
+            takePhoto();
+        }, 3000);
+    </script> {% endblock %}
+
+    <script async="" src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js" />
+    <script async="" src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"
+    />
+    <script async="" src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"
+    />
+    <script async="" src="https://cdn.rawgit.com/eligrey/FileSaver.js/597b6cd0207ce408a6d34890b5b2826b13450714/demo/demo.js"
+    />
+    <p></p>
+</body>
+
+</html>

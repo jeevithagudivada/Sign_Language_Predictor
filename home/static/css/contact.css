@@ -1,0 +1,294 @@
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
+}
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+
+/** Bold */ 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+body {
+  padding-top: 300px;
+  background-color: rgba(17, 20, 21, 0.9);
+  margin: 0;
+  color: #f2f2f2;
+}
+
+
+h1 {
+  font-family: 'San Francisco';
+  font-weight: bold;
+  
+  font-size: 20px;
+  margin-bottom: -5px;
+}
+.space {
+  margin-bottom: 14vh;
+}
+
+td{
+  font-family: 'San Francisco';
+  line-height: 1.8em;
+  padding-right: 25px;
+  font-size: 24px;
+}
+
+tr td:nth-child(2n + 1){
+  font-family: 'Trocchi', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: -1px; 
+  line-height: 1;
+}
+
+.center-wrap {
+  
+  margin: auto;
+  width: 60%;  
+  float: left;
+  color: #fff; 
+  margin-left: 400px;
+  
+  text-align: left;
+  
+  font-family: 'San Francisco';
+
+}
+
+.center-wrap ul li{
+  font-family: 'San Francisco';
+  font-size: 25px;
+}
+
+
+
+.medium {
+  font-family: 'San Francisco';
+  font-weight: 100;
+}
+
+.bold {
+  font-family: 'San Francisco';
+  font-weight: 700;
+}
+
+.thin {
+  font-family: 'San Francisco';
+  font-weight: 200;
+}
+
+.img {
+  width: 400px;
+  height: 225px;
+  background-color: #fff;
+}
+
+.tran {
+  opacity: .2;
+  font-size: 3em;
+}
+
+.animate-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .2;
+  animation: diamond 40s ease-in-out 0s infinite forwards;
+}
+
+@keyframes diamond {
+  20% {
+    tranform: perspective(800px) translateY(500px) translateZ(80px) rotate(90deg) rotateY(180deg);
+  }
+  65% {
+    transform: perspective(800px) translateY(50px) rotate(180deg) translateZ(-20px) rotateY(30deg);
+    top: 4em;
+  }
+  100% {
+    transform: perspective(800px) translateY(0px) rotate(0deg) rotateY(0deg) translateZ(0px);
+  }
+}
+
+.logo-sm {
+  margin-bottom: -5px;
+}
+a {
+  color: #379bff;
+  -webkit-transition: color 1s ease;
+  transition: color 1s ease;
+}
+a:hover {
+  color: #379bff;;
+}
+a:visited {
+  color: #ffffff;
+}
+
+h3
+{
+	padding-left:100px;
+}
+div#icon{
+	padding-left:100px;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 700px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content {
+  padding-top: 0.5em;
+  padding-left: 6em;
+  padding-right: 12em;
+  padding-bottom: 6em;
+  display:block;
+  height:100%;
+  width:100%;
+}
+
+
+article {
+  width: 20%;
+  float: left;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+article.active p {
+  opacity: 1;
+}
+article.active i {
+  background-color: rgba(33, 33, 123, 0.7);
+}
+article h2 {
+  font-weight: 100;
+}
+article p {
+  letter-spacing: .05em;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+}
+article header {
+	
+  text-align: center;
+  height: 500px;
+  position: relative;
+}
+article .connect:after {
+	
+
+  position: absolute;
+  top: 25%;
+  right: -22%;
+}
+article i {
+  height: 80px;
+  width: 80px;
+  border: 6px dotted white;
+  border-radius: 100%;
+  padding: 35px 25px 15px 25px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+h1 {
+  margin-top: 0%;
+  font-size: 5rem;
+  display: inline-block;
+  
+}
+h1 div {
+  position: relative;
+  float: right;
+}
+h1 div:first-child {
+  color: #3498db;
+  margin-left: 1rem;
+}
+
+nav {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding:0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+  
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: #379bff;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+
+.banner h2 {
+  padding-top: 10em;
+  color: #fff;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: 69%;
+}
+

@@ -1,0 +1,100 @@
+body {
+  background-color: #333;
+  color: #f2f2f2;
+  font-family: -apple-system,BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-size: 12pt;
+  font-weight: 300;
+}
+a { 
+  color: rgb(55,155,255); 
+  transition: color 1s ease;
+  &:hover{
+    color: rgb(155,155,255);
+  }
+  &:visited{
+    color: rgb(255,55,255);
+  }
+}
+section{
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  height: 700px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.bg-images img{
+  opacity: 0;
+  margin: 0 auto;
+  display: none;
+  width: 100%;
+  transition: all 300ms ease;
+  
+  &.active{
+    opacity: .9;
+    display: block;
+  }
+}
+
+.content{
+  padding: 6em;
+  z-index: 2;
+  background-color: rgba(4,54,4,.9);  
+  h1{
+    text-align:center;
+    margin-bottom: 2em;
+  }
+}
+article{
+  width: 20%;
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+  
+  &.active {
+    p{
+    opacity: 1;
+    }
+    i {
+      background-color: rgba(33,33,123,.7);
+    }
+  }
+  
+  h2{
+    font-weight: 100;
+  }
+  
+  p{
+    letter-spacing: .05em;
+    opacity: 0;
+    transition: opacity 100ms ease-in;
+  }
+  
+  header {
+    text-align: center;
+    height: 250px;
+    position: relative;
+  }
+  
+  .connect:after{
+      content: "- - - - - - - -";
+      position: absolute;
+      top:25%;
+      right:-22%;
+  }
+  
+  i {
+    height: 80px;
+    width: 80px;
+    border: 6px dotted white;
+    border-radius: 100%;
+    padding: 35px 25px 15px 25px;
+    transition: all 1s ease-in-out;
+  }
+}
+
+

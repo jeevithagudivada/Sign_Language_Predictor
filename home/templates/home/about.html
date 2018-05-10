@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Predictor</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+  
+</head>
+
+<body>
+
+  <main ng-app="app" ng-controller="mainCtrl">
+  <section class="content">
+  <article ng-class="{'active': section == 1}" ng-click="changeSec(1)">
+      <header class="connect">
+        <div id="icon" class="fa fa-universal-access fa-4x" aria-hidden="true"></div>
+        <h3>Universal Care</h3>
+      </header>
+      <p>Universal Care is American sign language translator that helps the world to bridge the gap between signers and non-signers</p>
+    </article>
+  <nav>
+  <ul>
+    <li>
+      <a href="../../index">Home</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+    <li>
+      <a href="../../tutorial">Tutorials</a>
+    </li>
+    <li>
+      <a href="../../contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+<br>
+<br>
+    <h1>
+  <div class="animated fadeInLeft">Predictor</div><div class="animated fadeInRight">Sign Language</div>
+</h1>
+<br>
+<br>
+
+</section>
+
+<div class="info">
+  
+    <h2>American sign language predictor helps the world to bridge the gap between
+  <br>signers and non-signers. The application takes in American sign language as
+  <br>input from signers and translates it into text format for the non-signers so that
+  <br>they communicate easily with them. The project has been developed by a 
+  <br>group of seven enthusiastic students as a part of software design course under
+  <br>the guidance of Prof. Lidia Morrison at California State University Fullerton
+     <span style="padding-left:500px">  Let's Go Ahead and Explore :)</span>
+</h2>
+ 
+</div>
+  
+</main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+  
+
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,157 @@
+{% load staticfiles %}
+<html>
+<head>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/upload_decor.css' %}">	
+  <link rel="stylesheet" href="{% static 'css/upload2.css' %}">	
+	
+</head>
+<body>
+
+
+   
+
+   <main ng-app="app" ng-controller="mainCtrl">
+      <section class="content">
+      <article ng-class="{'active': section == 1}" ng-click="changeSec(1)">
+          <header class="connect">
+            <div id="icon" class="fa fa-universal-access fa-4x" aria-hidden="true"></div>
+            <h3>Universal Care</h3>
+          </header>
+          <p></p>
+        </article>
+      <nav>
+        <ul>
+          <li>
+            <a href="../../index">Home</a>
+          </li>
+          <li>
+            <a href="../../about">About</a>
+          </li>
+          <li>
+            <a href="../../tutorial">Tutorials</a>
+          </li>
+          <li>
+            <a href="../../contact">Contact</a>
+          </li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+      
+    <br>
+    <div class="content">
+        <h1 class="medium">Upload Sign</h1>
+        
+        <p></p>
+      <form method="post" action="../upload/" enctype="multipart/form-data"> {% csrf_token %} 
+        
+          <label class="myFile"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Select Files&hellip;</span>
+          <input type="file" name="files" id="files" required data-multiple-caption="{count} files selected" />
+          </label>
+        <div id="preview"></div>		
+        <div id="div-submit"><input type="submit" value="Upload"/></div>
+        
+        <div>
+      </form>
+      </div>
+    
+    </section>
+
+    
+    </main>
+
+
+
+	<script>
+		window.URL    = window.URL || window.webkitURL;
+var elBrowse  = document.getElementById("files"),
+    elPreview = document.getElementById("preview"),
+    useBlob   = false && window.URL; // Set to `true` to use Blob instead of Data-URL
+
+// 2.
+function readImage (file) {
+  var reader = new FileReader();
+  // Once a file is successfully readed:
+  reader.addEventListener("load", function () {
+
+
+    var image  = new Image();
+    image.addEventListener("load", function () {
+
+      // Concatenate our HTML image info 
+      var imageInfo = file.name    +' '+ // get the value of `name` from the `file` Obj
+          image.width  +'×'+ image.height +' '+
+          file.type    +' '+
+          Math.round(file.size/1024) +'KB';
+
+      // Finally append our created image and the HTML info string to our `#preview` 
+      elPreview.appendChild( this );
+      elPreview.insertAdjacentHTML("beforeend", '<br><span class="img_title">'+imageInfo +'</span><br><br>');
+
+      
+      if (useBlob) {
+        // Free some memory for optimal performance
+        window.URL.revokeObjectURL(image.src);
+      }
+    });
+		
+    image.src = useBlob ? window.URL.createObjectURL(file) : reader.result;
+
+  });
+
+
+  reader.readAsDataURL(file);  
+}
+
+
+elBrowse.addEventListener("change", function() {
+  elPreview.innerHTML = '';
+  var files  = this.files;
+  // Let's create an empty `errors` String to collect eventual errors into:
+  var errors = "";
+
+  if (!files) {
+    errors += "File upload not supported by your browser.";
+  }
+
+  // Check for `files` (FileList) support and if contains at least one file:
+  if (files && files[0]) {
+
+    // Iterate over every File object in the FileList array
+    for(var i=0; i<files.length; i++) {
+
+      var file = files[i];
+
+
+      if ( (/\.(jpg)$/i).test(file.name) ) {
+
+        readImage( file ); 
+      } else {
+        errors += file.name +" Unsupported Image extension\n";  
+      }
+    }
+  }
+
+  // Notify the user for any errors (i.e: try uploading a .txt file)
+  if (errors) {
+    alert(errors); 
+  }
+
+});
+	</script>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+  
+
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>

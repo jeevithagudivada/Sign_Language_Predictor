@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+body {
+  color: #f2f2f2;
+  font-family: -apple-system,BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+a {  
+  -webkit-transition: color 1s ease;
+  transition: color 1s ease;
+  text-decoration: none;
+}
+a:hover {
+  color: #9b9bff;
+}
+a:visited {
+  color: #ff37ff;
+}
+
+h2{
+  font-family: 'Old Standard TT', serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  
+  color: #fff;
+}
+
+h2:hover {
+  color: #9b9bff;
+  font-weight: 15px;
+}
+
+h3
+{
+	padding-left:100px;
+}
+
+div#icon{
+	padding-left:100px;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 700px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+
+.bg-images img {
+  opacity: 0;
+  padding: 0;
+  margin: 0 auto;
+  display: none;
+  width: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  height: 100%;
+  max-height: 100%;  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+          
+}
+.bg-images img.active {
+  opacity: .9;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  padding: 10em;
+  z-index: 2;
+  background-color: rgba(50, 54, 50, 0.9);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+article {
+  width: 20%;
+  float: left;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+article.active p {
+  opacity: 1;
+}
+article.active i {
+  background-color: rgba(33, 33, 123, 0.7);
+}
+article h2 {
+  font-weight: 100;
+}
+article p {
+  letter-spacing: .05em;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+}
+article header {
+  text-align: center;
+  height: 250px;
+  position: relative;
+}
+article .connect:after {
+
+  position: absolute;
+  top: 25%;
+  right: -22%;
+}
+article i {
+  height: 80px;
+  width: 80px;
+  border: 6px dotted white;
+  border-radius: 100%;
+  padding: 35px 25px 15px 25px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+h1 {
+  margin-top: 0%;
+  font-size: 5rem;
+  display: inline-block;
+}
+h1 div {
+  position: relative;
+  float: right;
+}
+h1 div:first-child {
+  color: #3498db;
+  margin-left: 1rem;
+}
+
+
+.delay-1 {
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.eot?-9haulc');
+	src:url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.eot?#iefix-9haulc') format('embedded-opentype'),
+		url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.woff?-9haulc') format('woff'),
+		url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.ttf?-9haulc') format('truetype'),
+		url('https://s3.amazonaws.com/icomoon.io/4/Loading/icomoon.svg?-9haulc#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-spinner:before {
+	content: "\e000";
+}
+
+@keyframes anim-rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.spinner {
+	display: inline-block;
+	font-size:4.5em;
+	height: 1em;
+	line-height: 1;
+	margin: .5em;
+	animation: anim-rotate 2s infinite linear;
+	color: #fff;
+	text-shadow: 0 0 .25em rgba(255,255,255, .3);
+}
+.spinner--steps {
+	animation: anim-rotate 1s infinite steps(8);
+}
+.spinner--steps2 {
+	animation: anim-rotate 1s infinite steps(12);
+}
+
+nav {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+  text-color:white;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color:white;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color:white;
+}
+

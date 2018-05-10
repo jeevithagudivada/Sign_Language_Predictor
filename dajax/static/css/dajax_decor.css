@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+@import url('https://fonts.googleapis.com/css?family=Arapey|Arbutus+Slab|Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+
+h1{
+  font-family: 'Old Standard TT', serif;
+  color: rgb(64, 84, 148);
+  text-transform: uppercase;
+  font-size: 36px;
+  text-shadow: 0px 2px 4px rgba(92, 123, 141, 0.8),
+           0px 2px 4px rgba(92, 123, 141, 0.8),
+           0px 3px 6px rgba(92, 123, 141, 0.8);
+}
+
+.letter {  
+  margin: 0px auto;
+}
+
+.shadow {
+  color: #201d3f;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+  text-shadow:
+    -3px -3px 0 #222,
+    3px -3px 0 #222,
+    -3px 3px 0 #222,
+    3px 3px 0 #222,
+    4px 4px 0 #9ce2c3,
+    5px 5px 0 #9ce2c3,
+    6px 6px 0 #9ce2c3,
+    7px 7px 0 #9ce2c3;
+  line-height: 250px;
+  letter-spacing: 0.2em;
+  transform: scaleY(1.2);
+  -webkit-transform: scaleY(1.2);
+  -moz-transform: scaleY(1.2);
+  margin:0;
+  text-align: center;
+}
+
+.textView {
+  padding-left: 60px;
+  font-size:250px;
+  /*background:url('../img/bg.jpg');*/
+}
+
+body{
+    padding-left: 50px;
+}
+
+
+
+
+
+#div-submit{
+	padding: 5px 0px 0px 10px;
+	
+}
+
+.home{
+  padding-right:20px;
+  float: right;
+  padding-top:10px;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 12px;
+	font-weight:bold;	
+}
+
+.home:hover {
+	color: #4CAF50;
+	text-shadow:  0px 4px 8px rgba(0,0,0.4,0.8),
+				        0px 8px 8px rgba(0,0.1,5,0.2),
+                0px 18px 18px rgba(0,0.6,0,0.5);
+	font-size: 13px;
+}
+
+
+
+label{             
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 1.0em;
+}
+
+
+
+.myFile {
+  position: relative;
+  overflow: hidden;
+  display: inline;  
+  clear: left;
+}
+
+.myFile input[type="file"] {
+  display: block;  
+  opacity: 0;
+  font-size: 1px;
+  filter: alpha(opacity=0);
+  cursor: pointer; 
+  border-radius: 10px;
+}
+
+
+/*
+ul { list-style:none; text-align:center; border-top:1px solid #eee; border-bottom:1px solid #eee; padding:10px; }
+ul li { display:block; text-transform:uppercase; padding:5 10px; letter-spacing:5px; }
+*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+letter-spacing:5px;
+}
+ 
+li {
+  font-family: 'Overpass Mono', monospace;
+ font-size: 14 px;
+  border-bottom: 1px solid #f6f7ef;
+margin: auto;
+height: 35px;
+}
+ 
+li:first-child {
+  border-top: 1px solid #f6f7ef;
+}
+
+li:hover {
+  font-size: 18px;
+  background: #9ce2c3;
+}
+
+.content{
+	width: 210px;
+  margin: 0px auto;
+padding-bottom: 15px;
+}
+
+.sign {
+    width: 200px;
+    height: 120px;
+margin: auto;
+}
+
+/* resize images */
+.sign img {
+box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius: 6px;
+    width: 100%;
+    height: auto;
+}
+.animated { 
+           
+            padding-top:1px;
+            margin-bottom:1px;
+            -webkit-animation-duration: 1s;
+            animation-duration: 2s; 
+ 	    animation-iteration-count: 100;
+            -webkit-animation-fill-mode: both; 
+            animation-fill-mode: both; 
+         }
+         
+         @-webkit-keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+            40% {-webkit-transform: translateY(-30px);} 
+            60% {-webkit-transform: translateY(-15px);} 
+         } 
+         
+         @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-30px);} 
+            60% {transform: translateY(-15px);} 
+         }
+         
+         .bounce { 
+            -webkit-animation-name: bounce; 
+            animation-name: bounce; 
+         }
+
+
+
+
+

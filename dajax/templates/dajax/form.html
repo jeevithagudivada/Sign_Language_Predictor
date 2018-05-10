@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<html>
+
+<head>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/dajax_decor.css' %}">
+</head>
+
+<body>
+
+  <a href="../../index" class="home">Home Page</a>
+  <h1>Ajax Demo</h1>
+
+  <div class="letter">
+    
+  </div>
+
+  {% block javascript %}
+  <script>
+    window.setInterval(function () {
+      $.ajax({
+        url: '/dajax/exchange/',
+        dataType: 'json',
+        success: function (data) {
+          //alert(data);
+          $("#theLetter").html('<p class="shadow textView animated bounce">'+data+'</p>');
+        }
+      });
+    }, 1500);
+  </script> {% endblock %}
+
+  <div class="sign" id="theLetter">
+
+
+  </div>
+</body>
+
+</html>

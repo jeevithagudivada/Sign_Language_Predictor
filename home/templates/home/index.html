@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Predictor</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+ 
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  
+</head>
+
+<body>
+
+  <main ng-app="app" ng-controller="mainCtrl">
+  <section class="bg-images" style="height: 100%; width: 100%;">
+    <img class="img1" ng-class="{'active': section == 1}" src="https://static1.squarespace.com/static/59ea591912abd9a4d0a1825e/t/59ecfb812278e7aa8e8ce28e/1508703105620/118590674.jpg?format=1500w" alt="silhouettes of people with varying abilities" />
+    <img class="img2" ng-class="{'active': section == 2}" src="https://i.ytimg.com/vi/0df-_qqFgaw/maxresdefault.jpg" alt="hands signing american sign language alphatbet a-z and numbers 1-9" />
+    <img class="img3" ng-class="{'active': section == 3}" src="https://i.cdn-sc.com/PowerPointImages/5100/2_thumbnail.jpg" alt="the new accessible symbol of a person wheelchair gripping the wheels in motion traced over the old symbol of a person sitting in a wheelchair"
+    />
+    <img class="img4" ng-class="{'active': section == 4}" src="https://1.bp.blogspot.com/-lWQZyU3COeM/TeJvREPya8I/AAAAAAAAAMs/nYQIbVavQ5Y/s1600/Braile+00013545.jpg" alt="2 hands on an open page of a braille book" />
+    <img class="img5" ng-class="{'active': section == 5}" src="http://www.abc.net.au/radionational/image/8639806-16x9-700x394.jpg" alt="man wearing headphones sitting in a theater row chair"
+    />
+  </section>
+  <section class="content">
+  <article ng-class="{'active': section == 1}" ng-click="changeSec(1)">
+      <header class="connect">
+        <div id="icon" class="fa fa-universal-access fa-4x" aria-hidden="true"></div>
+        <h3>Universal Care</h3>
+      </header>
+      <p>Universal Care is American sign language translator that helps the world to bridge the gap between signers and non-signers</p>
+    </article>
+  <nav>
+    <ul>
+      <li>
+        <a href="#">Home</a>
+      </li>
+      <li>
+        <a href="../../about">About</a>
+      </li>
+      <li>
+        <a href="../../tutorial">Tutorials</a>
+      </li>
+      <li>
+        <a href="../../contact">Contact</a>
+      </li>
+    </ul>
+</nav>
+<br>
+<br>
+    <h1>
+  <div class="animated fadeInLeft">Predictor</div><div class="animated fadeInRight">Sign Language</div>
+</h1>
+<br>
+<br>
+<br>
+<br>
+    <article ng-class="{'active': section == 2}" ng-click="changeSec(2)">
+      <header class="connect">
+        <i class="fa fa-asl-interpreting fa-4x" aria-hidden="true"></i>
+        <h2><a href="../upload/form">Upload Sign</a></h2>
+      </header>
+      <p>    
+        <abrr></abbr>  </p>
+    </article>
+
+    <article ng-class="{'active': section == 3}" ng-click="changeSec(3)">
+      <header class="connect">
+        <i class="fa fa-wheelchair-alt fa-4x" aria-hidden="true"></i>
+        <h2><a href="../cam/take">Video</a></h2>
+      </header>
+    </article>
+    <article ng-class="{'active': section == 4}" ng-click="changeSec(4)">
+      <header class="connect">
+        <i class="fa fa-braille fa-4x" aria-hidden="true"></i>
+        <h2><a href="../train/form">Train New Data</a></h2>
+      </header>
+      <p> </p>
+    </article>
+    <article ng-class="{'active': section == 5}" ng-click="changeSec(5)">
+      <header>
+        <div class="spinner spinner--steps icon-spinner" aria-hidden="true"></div>
+        <h2><a href="../result/index">Result</a></h2>
+      </header>
+      <p> </p>
+    </article>
+  </section>
+</main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+  
+
+   
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Predictor</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+ 
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+
+</head>
+
+<body>
+
+  <main ng-app="app" ng-controller="mainCtrl">
+    <section class="content">
+      <article ng-class="{'active': section == 1}" ng-click="changeSec(1)">
+        <header class="connect">
+          <div id="icon" class="fa fa-universal-access fa-4x" aria-hidden="true"></div>
+          <h3>Universal Care</h3>
+        </header>
+        <p>Universal Care is American sign language translator that helps the world to bridge the gap between signers and non-signers</p>
+      </article>
+      <nav>
+        <ul>
+          <li>
+            <a href="../../index">Home</a>
+          </li>
+          <li>
+            <a href="../../about">About</a>
+          </li>
+          <li>
+            <a href="../../tutorial">Tutorials</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <br>
+      <br>
+      <h1>
+        <div class="animated fadeInLeft">Predictor</div>
+        <div class="animated fadeInRight">Sign Language</div>
+      </h1>
+      <br>
+      <br>
+
+    </section>
+   
+
+    <div class="center-wrap">
+        <h1 class="medium">Contact</h1>
+      <table border="0">
+        <tr>
+          <td>Alex Athas</td>
+          <td>cstrife16@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Liam Le</td>
+          <td>phucsaki@csu.fullerton.edu</td>
+        </tr>
+        <tr>
+          <td>Jeffrey Liv</td>
+          <td>jeffroliv@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Jeevitha Gudivada</td>
+          <td>jeevithagudivada@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Anushree Ankola</td>
+          <td>anuankola29@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Vineeth Vasudevan</td>
+          <td>vineeth.381994@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Elizabeth Tsan</td>
+          <td>elizabethchen@csu.fulllerton.edu</td>
+        </tr>
+      </table>
+    </div>
+
+  </main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+</html>

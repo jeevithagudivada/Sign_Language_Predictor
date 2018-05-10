@@ -1,0 +1,213 @@
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
+}
+
+/** Thin */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-thin-webfont.woff");
+}
+
+/** Regular */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+
+/** Bold */ 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+body {
+  padding-top: 120px;
+  background-color: rgba(17, 20, 21, 0.9);
+  margin: 0;
+  color: #f2f2f2;
+}
+
+
+
+.space {
+  margin-bottom: 14vh;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  height: 50px;
+}
+
+.medium {
+  font-family: 'San Francisco';
+  font-weight: 100;
+ 
+}
+
+.bold {
+  font-family: 'San Francisco';
+  font-weight: 700;
+ 
+}
+
+.thin {
+  font-family: 'San Francisco';
+  font-weight: 200;
+ 
+}
+
+
+
+
+.img {
+  width: 40%;  
+}
+
+.tran {
+  opacity: .2;
+  font-size: 3em;
+}
+
+
+
+.logo-sm {
+  margin-bottom: -5px;
+}
+a {
+  color: #379bff;
+  -webkit-transition: color 1s ease;
+  transition: color 1s ease;
+}
+a:hover {
+  color: #379bff;;
+}
+a:visited {
+  color: #ffffff;
+}
+
+h3
+{
+	padding-left:100px;
+}
+
+div#icon{
+	padding-left:100px;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+
+article {
+  width: 20%;
+  float: left;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+article.active p {
+  opacity: 1;
+}
+article.active i {
+  background-color: rgba(33, 33, 123, 0.7);
+}
+article h2 {
+  font-weight: 100;
+}
+article p {
+  letter-spacing: .05em;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+}
+article header {
+	
+  text-align: center;
+  height: 100px;
+  position: relative;
+}
+article .connect:after {
+	
+
+  position: absolute;
+  top: 25%;
+  right: -22%;
+}
+article i {
+  height: 80px;
+  width: 80px;
+  border: 6px dotted white;
+  border-radius: 100%;
+  padding: 35px 25px 15px 25px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+
+
+nav {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding:0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: #379bff;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+
+
