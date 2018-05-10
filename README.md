@@ -1,11 +1,12 @@
 # Sign_Language_Prediction
 Operating System Required is Ubuntu 16.04 or newer with the following dependencies:
- 	
-  -- Python 3.6.3
+
+
+    -- Python 3.6.3
   
- 	-- Django 2.0.3
+   	-- Django 2.0.3
   
- 	-- Tensorflow 1.6.0
+ 	  -- Tensorflow 1.6.0
 
 To run the application change to project directory and type the command 'python3 manage.py runserver'
 
