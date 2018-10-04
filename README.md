@@ -8,8 +8,11 @@ Operating System Required is Ubuntu 16.04 or newer with the following dependenci
   
  	-- Tensorflow 1.6.0
 
-To run the application change to project directory and type the command 'python3 manage.py runserver'
+To run the application:
+-open command prompt
+-change to project directory 
+-type the command 'python3 manage.py runserver'
 
-Open a web browser (Google Chrome) and go to type the URL 'http://127.0.0.1:8000/index'
+Open a web browser (Google Chrome) and gotype the URL 'http://127.0.0.1:8000/index'
 
 
